@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-responsive-sass",
+  "version": "1.0.0",
+  "description": "Responsive portfolio website with sass",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass -w sass/ -o dist/css/ --recursive"
+  },
+  "author": "Faris Mulahasanovic",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
