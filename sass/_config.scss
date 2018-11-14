@@ -12,7 +12,13 @@ $background-opacity: .7;
 @mixin background {
     @if $show-home-image {
         &#bg-img{
-            background: $home-image;
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.0),
+                rgba(0, 0, 0, 0.0) 1px,
+                rgba(0, 0, 0, 0.3) 1px,
+                rgba(0, 0, 0, 0.3) 2px
+              ), $home-image;
             background-attachment: fixed;
             background-size: cover;
 

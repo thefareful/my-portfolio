@@ -3,7 +3,15 @@
 }
 
 @include mediaLg {
-    
+    .about-skills{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+        "skills-heading skills-heading skills-heading skills-heading"
+        "skill1 skill2 skill3 skill4"
+        "skill8 skill10 skill5 skill6"
+        "skill7 skill9 skill11 skill12"
+        ;
+    }
 }
 
 @include mediaMd {

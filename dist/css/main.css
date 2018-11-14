@@ -97,13 +97,13 @@
 
 body {
   color: #fff;
-  background: #393E41;
+  background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0.3) 2px), #393E41;
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../img/background.jpg);
+    background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0.3) 2px), url(../img/background.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img::after {
@@ -182,7 +182,13 @@ main {
     margin: 0 auto; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    border-bottom: 2px solid #F6AE2D;
+    background-image: linear-gradient(to bottom, rgba(81, 88, 92, 0.3), transparent);
+    padding: 2rem;
+    border-radius: 5px; }
+    .about-info .bio p {
+      font-style: oblique; }
   .about-info .heading-jobs {
     grid-area: jobs-heading; }
   .about-info .job-1 {
@@ -195,14 +201,15 @@ main {
     background: #454b4f;
     padding: 1rem;
     border-bottom: #F6AE2D solid 5px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .about-skills {
   margin-top: 5rem;
   display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "skills-heading skills-heading skills-heading skills-heading" "skill1 skill2 skill3 skill4" "skill5 skill6 skill7 skill8" ". skill9 skill10 ."; }
+  grid-gap: 30px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "skills-heading skills-heading skills-heading skills-heading skills-heading skills-heading" "skill1 skill2 skill3 skill4 skill8 skill10" "skill5 skill6 skill7 skill9 skill11 skill12"; }
   .about-skills .heading-skills {
     grid-area: skills-heading; }
   .about-skills .skill-1 {
@@ -225,23 +232,29 @@ main {
       font-size: 7.5rem; }
   .about-skills .skill-9 {
     grid-area: skill9;
-    padding-top: 3rem !important; }
+    padding-top: 2rem !important; }
   .about-skills .skill-10 {
     grid-area: skill10; }
+  .about-skills .skill-11 {
+    grid-area: skill11; }
+  .about-skills .skill-12 {
+    grid-area: skill12; }
   .about-skills h5 {
     color: #F6AE2D; }
   .about-skills .skill {
     width: 100%;
+    min-width: 152px;
     text-align: center;
     background: #51585c;
-    padding: 2rem;
     vertical-align: middle;
     border-radius: 5px;
     transition: all .3s;
     height: initial;
     border-bottom: 5px solid #51585c; }
     .about-skills .skill:hover {
-      border-bottom: 5px solid #F6AE2D; }
+      border-bottom: 5px solid #F6AE2D;
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4); }
       .about-skills .skill:hover .icons {
         color: #F6AE2D;
         transition: all .5s ease-out; }
@@ -249,12 +262,44 @@ main {
       font-size: 5rem;
       margin: 1rem; }
 
+.about-education {
+  margin-top: 5rem;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "education-heading education-heading" "education-formal education-other" "education-formal dev-days"; }
+  .about-education .heading-education {
+    grid-area: education-heading; }
+  .about-education .formal-education,
+  .about-education .other-education,
+  .about-education .dev-days {
+    background: #454b4f;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .about-education .formal-education h4,
+    .about-education .other-education h4,
+    .about-education .dev-days h4 {
+      margin-top: 0; }
+  .about-education .formal-education {
+    grid-area: education-formal; }
+  .about-education .other-education {
+    grid-area: education-other; }
+  .about-education .dev-days {
+    grid-area: dev-days; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: #212426;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .about-skills {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "skills-heading skills-heading skills-heading skills-heading" "skill1 skill2 skill3 skill4" "skill8 skill10 skill5 skill6" "skill7 skill9 skill11 skill12"; } }
 
 @media screen and (max-width: 768px) {
   main {
